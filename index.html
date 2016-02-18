@@ -1,0 +1,105 @@
+<!doctype HTML>
+<html>
+<!-- COOL KIDS ONLY USE ONE FILE -->
+	<head>
+			<style>
+				.blink {
+					-webkit-animation-name: blinker;
+					-webkit-animation-duration: 1s;
+					-webkit-animation-timing-function: linear;
+					-webkit-animation-iteration-count: infinite;
+
+					-moz-animation-name: blinker;
+					-moz-animation-duration: 1s;
+					-moz-animation-timing-function: linear;
+					-moz-animation-iteration-count: infinite;
+
+					animation-name: blinker;
+					animation-duration: 1s;
+					animation-timing-function: linear;
+					animation-iteration-count: infinite;
+				}
+
+				@-moz-keyframes blinker {  
+					0% { opacity: 1.0; }
+					50% { opacity: 0.0; }
+					100% { opacity: 1.0; }
+				}
+
+				@-webkit-keyframes blinker {  
+					0% { opacity: 1.0; }
+					50% { opacity: 0.0; }
+					100% { opacity: 1.0; }
+				}
+				@keyframes blinker {  
+					0% { opacity: 1.0; }
+					50% { opacity: 0.0; }
+					100% { opacity: 1.0; }
+				}
+			</style>
+	</head>
+	<body style="background-color:black;font-family:'Comic Sans MS', cursive, sans-serif;font-size:30px">
+		<div>
+			<marquee scrollamount="100"><p id="0">I Love Marquees!</p></marquee>
+			<marquee scrollamount="100"><div id="1"class="blink" style="text-align:center">I ALSO LOVE BLINKERS</div></marquee>
+			<marquee scrollamount="100"direction="right"><p id="2">I Love Marquees!</p></marquee>
+			<marquee scrollamount="100"><img src="wow.gif"></img></marquee>
+			<marquee scrollamount="100"><marquee direction="up"><p id="3">Even Eddie Wally agrees!</p></marquee></marquee>
+			<marquee scrollamount="100"direction="right"><p id="4">I Love Marquees!</p></marquee>
+			<marquee scrollamount="150"><marquee scrollamount="50" direction="right"><span><p id="5"> MARQUEES INSIDE OF MARQUEES</p><p id="6"> MARQUEECEPTION</p></div></marquee></marquee>
+		</div>
+		<script>
+		<!-- NO NEED FOR JQUERY WHERE WE'RE GOING-->
+			window.onload = function(){
+					var tf = false;
+					for(var i=0; !tf; i++){
+						if(document.getElementById(i) !== null){
+							randRGB(i);
+						}
+						else{
+							tf = true;
+						}
+					}
+			}
+			function randRGB(n){
+				var count = Math.floor(Math.random()*254);
+				var state = Math.floor(Math.random()*4);
+			setInterval(function(){
+				count++;
+				if(count == 256){
+						count = 0;
+						state++;
+						if(state == 5){
+							state = 0;
+						}
+				}
+				if(state == 0){
+					setRGB(n, 255, count, 0);
+				}
+				if(state == 1){
+					setRGB(n, 255 - count , 255, 0);
+				}
+				if(state == 2){
+					setRGB(n, 0, 255 - count , count);
+				}
+				if(state == 3){
+					setRGB(n, count, 0 , 255);
+				}
+				if(state == 4){
+					 setRGB(n, 255, 0, 255 - count);
+				}
+			}, 1);
+			}
+			function setRGB(n, r, g, b){
+				document.getElementById(n).style.color = "#" + toHex(r) + toHex(g) + toHex(b);	
+			}	
+			function toHex(num){
+				var str = num.toString(16);
+				if(str.length == 1){
+					str = "0" + str;
+				}
+				return str;
+			}
+		</script>
+	</body>
+</html>
