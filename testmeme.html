@@ -3,11 +3,13 @@
 	<body style="width:100%;height:auto;">
 		<h1 id="harres"style="text-align:center;color:red;size:2000em;"> SEXUAL HARRESMENT </h1>		
 		<img src="http://slayerx117.github.io/url.jpg" style="height:auto;position:absolute;" id="xdmeme"/>
-		
+		<button onClick="swap()">Don't Click Me</button>
 			<script>
 				//this is hardcoded dont do this
-				var random = 0	;
+				var random = 0;
 				var a = 0;
+				var swap = false;
+				function swap(){swap = !swap}
 				var fonts = ["Georgia, serif", "'Palatino Linotype', 'Book Antiqua', Palatino, serif", "'Times New Roman', Times, serif", "Arial, Helvetica, sans-serif","'Arial Black', Gadget, sans-serif", "'Comic Sans MS', cursive, sans-serif","Impact, Charcoal, sans-serif", "Tahoma, Geneva, sans-serif"];
 				var hellermode = -1; //WACKY XD
 				setInterval(function(){
@@ -15,7 +17,13 @@
 					random = Math.floor(Math.random()*8);
 					//console.log(random);
 					a+= (2*Math.PI)/1000;
-					document.getElementById("xdmeme").setAttribute("style", "position:absolute;left:" + ((Math.sin(a)*951)+ 939) + "px;" + "top:" + Math.abs(Math.cos(a)*700) + "px;" + "height:" + Math.abs(Math.cos(a)*30)+10 + "%" );
+					if(!swap){
+					document.getElementById("xdmeme").setAttribute("style", "position:absolute;left:" + hellermode*(Math.abs((Math.sin(a)*951)+ 939)) + "px;" + "top:" + Math.abs(Math.cos(a)*700) + "px;" + "height:" + 	Math.abs(Math.cos(a)*30)+10 + "%" );
+					}
+					else //this comment is here to trigger heller 
+					{
+					document.getElementById("xdmeme").setAttribute("style", "position:absolute;left:" + ((Math.sin(a)*951)+ 939) + "px;" + "top:" + Math.abs(Math.cos(a)*700) + "px;" + "height:" + 	Math.abs(Math.cos(a)*30)+10 + "%" );
+					}
 					document.getElementById("harres").setAttribute("style", "text-align:center;color:red;font-family:"+ fonts[random] + "; font-size:"+ Math.abs((Math.sin(a)*10)) + "em" );
 					hellermode*=-1;
 					}, 1);
