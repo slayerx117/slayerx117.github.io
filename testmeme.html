@@ -3,16 +3,20 @@
 	<body style="width:100%;height:auto;">
 		<h1 id="harres"style="text-align:center;color:red;size:2000em;"> SEXUAL HARRESMENT </h1>		
 		<img src="http://slayerx117.github.io/url.jpg" style="height:auto;position:absolute;" id="xdmeme"/>
-		<button onClick="swap()">Don't Click Me</button>
+		<button id="hard to click" onClick="swap()">Click Me</button>
 			<script>
 				//this is hardcoded dont do this
+				var __This_Variable_Does_Nothing__ = "xd" //note, this variable does nothing
 				var random = 0;
 				var a = 0;
-				var swap = false;
+				var swap = true;
+				var w = window.innerWidth;
+				var h = window.innerHeight;
 				function swap(){swap = !swap}
 				var fonts = ["Georgia, serif", "'Palatino Linotype', 'Book Antiqua', Palatino, serif", "'Times New Roman', Times, serif", "Arial, Helvetica, sans-serif","'Arial Black', Gadget, sans-serif", "'Comic Sans MS', cursive, sans-serif","Impact, Charcoal, sans-serif", "Tahoma, Geneva, sans-serif"];
 				var hellermode = -1; //WACKY XD
 				setInterval(function(){
+					document.getElementById("hard to click").setAttribute("style", "position:absolute;left:" + Math.random()*w + "px;top:" + Math.random()*h + "px;");
 					//console.log(fonts.length);
 					random = Math.floor(Math.random()*8);
 					//console.log(random);
