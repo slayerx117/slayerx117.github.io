@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<body style="width:100%;height:auto;">
+		<audio controls autoplay id="loud"  style="visibility:hidden">
+			<source src="NOMA - Brain Power.mp3" type="audio/mpeg">
+		</audio>
 		<h1 id="harres"style="text-align:center;color:red;size:2000em;"> SEXUAL HARRESMENT </h1>		
 		<img src="http://slayerx117.github.io/url.jpg" style="height:auto;position:absolute;" id="xdmeme"/>
 		<button id="hard to click" onClick="swap()">Click Me</button>
 			<script>
 				//this is hardcoded dont do this
 				var __This_Variable_Does_Nothing__ = "xd" //note, this variable does nothing
+				document.getElementById("loud").volume = .2;
 				var random = 0;
 				var a = 0;
 				var swap = true;
@@ -30,6 +34,7 @@
 					}
 					document.getElementById("harres").setAttribute("style", "text-align:center;color:red;font-family:"+ fonts[random] + "; font-size:"+ Math.abs((Math.sin(a)*10)) + "em" );
 					hellermode*=-1;
+					
 					}, 1);
 			</script>
 	</body>
