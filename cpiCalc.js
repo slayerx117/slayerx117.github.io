@@ -2,9 +2,11 @@
 //blame atom i perfer 4 space tabs not 1 space
 $(document).ready(function(){
   $("#salary2015").keyup(function(){
-    $("#taxCurrent").text( "Tax: \n$" + calcTax(2015, $("#salary2015").val()));
-    $("#ETR").text("Current Effective Tax Rate:\n" + (Math.round( calcTax(2015, $("#salary2015").val()) / $("#salary2015").val() * 1000)/10) + "%");
-    updateInflation();
+    if($("#salary2015").val() > 0){
+      $("#taxCurrent").text( "Tax: \n$" + calcTax(2015, $("#salary2015").val()));
+      $("#ETR").text("Current Effective Tax Rate:\n" + (Math.round( calcTax(2015, $("#salary2015").val()) / $("#salary2015").val() * 1000)/10) + "%");
+      updateInflation();
+    }
   });
 });
 let cpi = JSON.parse('{"1950":9.834730290,"1960":8.007331081,"1970":6.108685567,"1980":2.876419903,"2015": 1}');
