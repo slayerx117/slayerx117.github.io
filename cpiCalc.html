@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"/>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="cpiCalc.js"></script>
+    <style>
+    textarea{
+      background-color: #f9f9f9;
+    }
+     textarea:hover{
+       cursor: not-allowed;
+     }
+    </style>
+</head>
+  <body style="height:100%;background-color:#e3e3e3;font-family:Arial, Helvetica, sans-serif">
+      <h1 style="margin:0;width:100%;padding:.5em; position:absolute; left:0; top:0;color:black;text-align:center;background-color:white;font-weight:bold;font-size:3em;"> CPI Calculator</h1>
+      <div class="container-fluid">
+      <div class="col-md-4">
+        <div style="margin-top:9em;padding:1em;background-color:white;">
+        <h4 style="margin-bottom:.8em;"> Salary in 2015 </h4>
+        <div style="text-align:center;"><input type="number" id="salary2015" style="padding-top:0em;position:relative;left:.5em;width:60%;text-align:center;" placeholder="Enter Dollar Value"></input></div>
+        <h5 id="taxCurrent"> Tax: </h5>
+        <h5 id="ETR">Current Effective Tax Rate:</h5>
+        </div>
+        <div style="margin-top:2em;padding:1em;background-color:white;">
+          <h4> Dollar amount adjusted to inflation <p style="color:grey;font-size:10px;"> currently only supported for these years</p></h4>
+          <div style="text-align:center"> <textarea id="dates" type="text" name="paragraph_text" cols="20" rows="10" placeholder="Add as many years from 1914 - 2016 seperated by commas" style="padding-top:0em;width:80%;text-align:left;" readonly>1950, 1960, 1970, 1980, 2015</textarea></div>
+          <div style="text-align:center"><input type="button" style="border: none; color: black; padding: .6em 40%; text-align: center; text-decoration: none; display: inline-block; :hover:not-allowed" value="Update" onclick="updateInflation()"> </input></div>
+        </div>
+        <div style="margin-top:2em;padding:1em;background-color:white;">
+          <h5> Created by Ben Davis </h5>
+          <div style="text-align:center">
+          <a href="https://github.com/slayerx117"> Github </a>
+          <br>
+          <a href="https://twitter.com/no_username_man"> Twitter </a>
+          <p> benjaminaaron117@att.net for business inquiries </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div style="margin-top:9em;padding:1em;background-color:white;">
+        <h4> Salary adjusted for inflation</h4>
+        <div style="position:relative;left:1em;">
+            <span class="container-fluid">
+              <div class="col-sm-3"style=" border-right: 2px solid black;">
+                <h4>Year:</h4>
+                <div style="text-align:right" id="years"></div>
+              </div>
+              <div class="col-sm-4" style="text-align:center;border-right: 2px solid black;">
+                <h4> Salary:</h4>
+                <div style="text-align:center" id="salaries">
+                </div>
+              </div>
+              <div class="col-sm-4" style="text-align:left">
+                  <div class="col-xs-6" style="border-right:  2px solid black;">
+                    <h4>Tax:</h4>
+                    <div id="taxes"></div>
+                    </div>
+                    <div class="col-xs-6">
+                      <h4>Effective Tax Rate:</h4>
+                      <div id="ETRYears"></div>
+                    </div>
+                  </div>
+            </span>
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
