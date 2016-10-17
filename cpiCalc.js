@@ -19,23 +19,6 @@ let taxRate2016 = [[9225, .10], [37450, .15], [90750, .25], [189300, .33],  [411
 function calcSalary(year, amt){
   return Math.round(amt/cpi[year.toString()]*100)/100;
 }
-function calcGraduated(rate, inc){
-  let taxGrad = rate[0][1]*rate[0][0];
-  let temp = 0;
-  for(let i = 0; i < rate.length; i++){
-    if(inc < rate[i][0]){
-      temp = i;
-      break;
-    }
-    else{
-      temp = rate.length - 1;
-    }
-  }
-  for(let i = 1; i < temp; i++){
-    taxGrad+= ( rate[i][0] - rate[i-1][0] ) * rate[i][1];
-  }
-    return taxGrad;
-}
 function updateInflation(){
   var dat = "1950,1960,1970,1980".split(',');
   var salary;
@@ -63,13 +46,30 @@ function updateInflation(){
 
 function calcTax(year, amt){
   let rate = eval("taxRate" + year);
-  if(amt >= rate[rate.length-1][0]){return Math.round((calcGraduated(rate, amt) + rate[rate.legnth-1][1] * (amt  -  rate[rate.legnth-1][0]) ) *100 ) / 100;}
+  if(amt >= rate[rate.length-1][0]){return Math.round((calcGraduated(rate, amt) + rate[rate.length-1][1] * (amt  -  rate[rate.length-1][0]) ) *100 ) / 100;}
   if(amt <= rate[0][0] ) return Math.trunc(amt*rate[0][1] * 100)/100;
     for(var i = rate.length; i--; i>=0){
       if(amt >= rate[i][0]){
          return Math.round((calcGraduated(rate, amt) + rate[i+1][1] * (amt  -  rate[i][0]) ) *100 ) / 100;
        }
     }
+  }
+  function calcGraduated(rate, inc){
+    let taxGrad = rate[0][1]*rate[0][0];
+    let temp = 0;
+    for(let i = 0; i < rate.length; i++){
+      if(inc < rate[i][0]){
+        temp = i;
+        break;
+      }
+      else{
+        temp = rate.length - 1;
+      }
+    }
+    for(let i = 1; i < temp; i++){
+      taxGrad+= ( rate[i][0] - rate[i-1][0] ) * rate[i][1];
+    }
+      return taxGrad;
   }
   function beutify(num){
     return num.toLocaleString('en-US', {minimumFractionDigits: 2})
