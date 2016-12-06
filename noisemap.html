@@ -1,0 +1,41 @@
+<!doctype HTML>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var c = document.getElementById("canv")
+				var ctx = c.getContext("2d")
+				var x = 0
+				var y = 0
+				ctx.canvas.height = window.innerHeight
+				ctx.canvas.width = window.innerWidth
+				console.time('populate()')
+				populate(ctx.canvas.width, ctx.canvas.height)	
+				console.timeEnd('populate()')
+				function populate(width, height){
+					for(var h = 0; h < height; h++){
+						for(var w = 0; w < width; w++){
+							ctx.fillStyle = "#"+(toRGB(randomize(),randomize(),randomize()))
+							ctx.fillRect(w,h,1,1)
+						}
+					}
+				}
+				function randomize(){
+					return Math.floor(Math.random() * 256)		
+				}
+				function toHex(a){
+    					var hex = a.toString(16)
+	  	 			return hex.length == 1 ? "0" + hex : hex			
+				}
+				function toRGB(r,g,b){
+					return toHex(r) + toHex(g) + toHex(b)
+				}
+			})	
+		</script>
+		<canvas style="position:absolute;left:0;top:0;" id="canv"></canvas>
+	</head>
+	<body>
+	</body>
+	
+</html>
