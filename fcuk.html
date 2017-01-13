@@ -1,0 +1,54 @@
+<!doctype HTML>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+			$(document).ready(function(){
+				var avg = []
+				var r = Math.floor(Math.random() * 256)
+				var g = Math.floor(Math.random() * 256)
+				var b = Math.floor(Math.random() * 256)
+				the = {r,g,b};
+				setInterval(function(){
+					$("body").attr("style", "background-color:#" + toRGB(r,g,b))
+					avg.push([r,g,b]);
+					the = randomize()
+					r = randomize()
+					b = randomize()
+					g = randomize()
+				}, 1)
+				setInterval(function(){
+					var avgR = 0
+					var avgG = 0
+					var avgB = 0
+					for(var i = 0; i < avg.length; i++){
+						avgR += avg[i][2]
+						avgB += avg[i][1]
+						avgG += avg[i][0]
+					}
+					avgR = Math.floor(avgR/avg.length)
+					avgB = Math.floor(avgB/avg.length)
+					avgG = Math.floor(avgG/avg.length)
+				}, 1000)
+			})
+			
+			function randomize(){
+				return Math.floor(Math.random() * 256)
+				
+			}
+
+			function toHex(a){
+    				var hex = a.toString(16)
+  	 			return hex.length == 1 ? "0" + hex : hex;
+					
+			}
+			function toRGB(r,g,b){
+				return toHex(r) + toHex(g) + toHex(b);
+			}
+		</script>
+	</head>
+	<body>
+	<div id="the" style = "width:100px;height:100px;padding:0;margin:0;background-color:#0000000">
+	</body>
+	
+</html>
