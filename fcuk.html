@@ -1,7 +1,7 @@
 <!doctype HTML>
 <html>
 	<head>
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src=" jquery-1.12.0.min.js"></script>
 <script>
 			$(document).ready(function(){
 				var avg = []
@@ -29,18 +29,19 @@
 					avgR = Math.floor(avgR/avg.length)
 					avgB = Math.floor(avgB/avg.length)
 					avgG = Math.floor(avgG/avg.length)
+					$("#the").attr("style", "width:100px;height:100px;padding:0;margin:0;background-color:#" + toRGB(avgR,avgG,avg	B))
 				}, 1000)
 			})
-			
+
 			function randomize(){
 				return Math.floor(Math.random() * 256)
-				
+
 			}
 
 			function toHex(a){
     				var hex = a.toString(16)
   	 			return hex.length == 1 ? "0" + hex : hex;
-					
+
 			}
 			function toRGB(r,g,b){
 				return toHex(r) + toHex(g) + toHex(b);
@@ -50,5 +51,5 @@
 	<body>
 	<div id="the" style = "width:100px;height:100px;padding:0;margin:0;background-color:#0000000">
 	</body>
-	
+
 </html>

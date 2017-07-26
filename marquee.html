@@ -1,52 +1,38 @@
 <!doctype HTML>
 <html>
-<!-- COOL KIDS ONLY USE ONE FILE -->
 	<head>
 			<style>
-				.blink {
-					-webkit-animation-name: blinker;
-					-webkit-animation-duration: 1s;
-					-webkit-animation-timing-function: linear;
-					-webkit-animation-iteration-count: infinite;
-
-					-moz-animation-name: blinker;
-					-moz-animation-duration: 1s;
-					-moz-animation-timing-function: linear;
-					-moz-animation-iteration-count: infinite;
-
-					animation-name: blinker;
-					animation-duration: 1s;
-					animation-timing-function: linear;
-					animation-iteration-count: infinite;
-				}
-
-				@-moz-keyframes blinker {  
-					0% { opacity: 1.0; }
-					50% { opacity: 0.0; }
-					100% { opacity: 1.0; }
-				}
-
-				@-webkit-keyframes blinker {  
-					0% { opacity: 1.0; }
-					50% { opacity: 0.0; }
-					100% { opacity: 1.0; }
-				}
-				@keyframes blinker {  
-					0% { opacity: 1.0; }
-					50% { opacity: 0.0; }
-					100% { opacity: 1.0; }
-				}
 			</style>
 			<script src="jquery-1.12.0.min.js"></script>
 	</head>
 	<body>
-		<div style="font-family:'Comic Sans MS', cursive, sans-serif;font-size:30px" id="rainbow">
-			<marquee scrollamount="100" direction="right"><p/>I Love Marquees!</p></marquee>
-			<marquee scrollamount="100"><div class="blink" style="text-align:center">I ALSO LOVE BLINKERS</div></marquee>
-			<marquee scrollamount="100" direction="right"><marquee direction="up"><p>Even Eddie Wally agrees!</p></marquee></marquee>
-			<div style="display:inline"><marquee scrollamount="100"><marquee scrollamount="100" direction="down"><img style="width:33%"src="wow.gif"></img><img style="width:33%" src="wow.gif"></img><img style="width:33%" src="wow.gif"></img></marquee></marquee></div>
-			<marquee scrollamount="100" direction="right"><p>Marquees are awesome!</p></marquee>
-			<marquee scrollamount="100"><p>Now featuring rainbow text!</p></marquee>
+		<audio controls autoplay id="loud"  volume = ".1" style="visibility:hidden">
+			<source src="notstolen.mp3" type="audio/mpeg">
+		</audio>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
 		</div>
 		<script>
 		<!-- NO NEED FOR JQUERY WHERE WE'RE GOING-->
@@ -83,8 +69,8 @@
 			}, 1);
 			}
 			function setRGB( r, g, b){
-				$("body").attr("style", "background-color: 	#" + toHex(r) + toHex(g) + toHex(b));	
-			}	
+				$("body").attr("style", "background-color: 	#" + toHex(r) + toHex(g) + toHex(b));
+			}
 			function toHex(num){
 				var str = num.toString(16);
 				if(str.length == 1){

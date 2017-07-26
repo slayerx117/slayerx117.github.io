@@ -10,11 +10,11 @@
 			function testmeme(){
 			var fonts = ["Georgia, serif", "'Palatino Linotype', 'Book Antiqua', Palatino, serif", "'Times New Roman', Times, serif", "Arial, Helvetica, sans-serif","'Arial Black', Gadget, sans-serif", "'Comic Sans MS', cursive, sans-serif","Impact, Charcoal, sans-serif", "Tahoma, Geneva, sans-serif"];
 				setInterval(function(){
-					document.getElementById("testmeme").style = "font-family:" + fonts[Math.floor(Math.random() * fonts.length)]
+					document.getElementById("testmeme").style = "color:red;font-family:" + fonts[Math.floor(Math.random() * fonts.length)]
 				}, 1)
 			}
 			function noisemap(){
-			
+
 			}
 			function toHex(a){
 				var hex = a.toString(16)
@@ -22,7 +22,7 @@
 		</script>
 		<style>
 			button {
-				
+
 			}
 		</style>
 	</head>
@@ -33,9 +33,9 @@
 		<br><br>
 		<button id = "cpiCalc" onclick = "window.location.href = 'cpiCalc.html'">cpiCalc</button>
 		<br><br>
-		<button id = "testmeme" onclick = "window.location.href = 'testmeme.html'">testmeme</button>
-		<br><br>
 		<button id = "noisemap" onclick = "window.location.href = 'noisemap.html'">noisemap</button>
+		<br><br>
+		<button id = "testmeme" onclick = "window.location.href = 'testmeme.html'">testmeme</button>
 		<script>
 			window.onload = function(){
 				fcuk()
