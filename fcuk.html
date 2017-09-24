@@ -18,17 +18,6 @@
 					g = randomize()
 				}, 1)
 				setInterval(function(){
-					var avgR = 0
-					var avgG = 0
-					var avgB = 0
-					for(var i = 0; i < avg.length; i++){
-						avgR += avg[i][2]
-						avgB += avg[i][1]
-						avgG += avg[i][0]
-					}
-					avgR = Math.floor(avgR/avg.length)
-					avgB = Math.floor(avgB/avg.length)
-					avgG = Math.floor(avgG/avg.length)
 					$("#the").attr("style", "width:100px;height:100px;padding:0;margin:0;background-color:#" + toRGB(avgR,avgG,avgB))
 				}, 1000)
 			})
@@ -49,7 +38,6 @@
 		</script>
 	</head>
 	<body>
-	<div id="the" style = "width:100px;height:100px;padding:0;margin:0;background-color:#0000000">
 	</body>
 
 </html>
